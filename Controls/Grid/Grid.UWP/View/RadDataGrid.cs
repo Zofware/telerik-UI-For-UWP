@@ -746,7 +746,8 @@ namespace Telerik.UI.Xaml.Controls.Grid
         {
             get
             {
-                return RadControl.IsInTestMode || DesignMode.DesignModeEnabled;
+                return true;    // force synchronous execution to be compatible with CalculatedProperties library
+                // return RadControl.IsInTestMode || DesignMode.DesignModeEnabled;
             }
         }
 
