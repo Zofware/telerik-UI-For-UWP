@@ -9,11 +9,20 @@
       RestoreControlsSolutionNuGetPackages;
       BuildControlsSolution;
       RestoreMapSolutionNuGetPackages;
+      BuildMapX64Platform;
+    </BuildDependsOn>
+<!--    
+    <BuildDependsOn>
+      GetLatestNugetExe;
+      RestoreControlsSolutionNuGetPackages;
+      BuildControlsSolution;
+      RestoreMapSolutionNuGetPackages;
       BuildMapX86Platform;
       BuildMapX64Platform;
       BuildMapArmPlatform;
       BuildMapArm64Platform;
     </BuildDependsOn>
+-->    
   </PropertyGroup>
 
 

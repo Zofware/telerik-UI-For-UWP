@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
 
   <PropertyGroup>
@@ -10,12 +10,14 @@
     <ControlsFolder>$(MsBuildProjectDirectory)\..\Controls</ControlsFolder>
     <UWPControlsSolutionPath>$(ControlsFolder)\UWPControls.sln</UWPControlsSolutionPath>
     <UWPMapSolutionPath>$(ControlsFolder)\UWPMap.sln</UWPMapSolutionPath>
-    <Configuration>Release</Configuration>
+    <Configuration Condition="'$(Configuration)'=='Debug'">Debug</Configuration>
+    <Configuration Condition="'$(Configuration)'=='Release'">Release</Configuration>
+    <Configuration Condition="'$(Configuration)'==''">Release</Configuration>
     <AnyCPUPlatform>Any CPU</AnyCPUPlatform>
-    <X86Platform>x86</X86Platform>
+    <!--<X86Platform>x86</X86Platform>-->
     <X64Platform>x64</X64Platform>
-    <ArmPlatform>ARM</ArmPlatform>
-    <Arm64Platform>ARM64</Arm64Platform>
+    <!--<ArmPlatform>ARM</ArmPlatform>-->
+    <!--<Arm64Platform>ARM64</Arm64Platform>-->
   </PropertyGroup>
 
 </Project>

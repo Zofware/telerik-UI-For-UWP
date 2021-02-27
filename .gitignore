@@ -23,7 +23,11 @@ project.lock.json
 
 Binaries/*
 Build/*
+BuildTools/nuget.exe
+Nuget/*
+
 Controls/.nuget/*
+Controls/
 Controls/Core/*
 Controls/Data/*
 Controls/**/*.Windows/*
@@ -51,6 +55,7 @@ Drawing/*
 
 Drawing.UWP/DrawingUWP/x64/*
 Drawing.UWP/DrawingUWP/ARM/*
+Drawing.UWP/DrawingUWP/ARM64/*
 Drawing.UWP/DrawingUWP/x86/*
 Drawing.UWP/DrawingUWP/Release/*
 Drawing.UWP/DrawingUWP/Debug/*
