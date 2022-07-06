@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
@@ -439,6 +439,11 @@ namespace Telerik.UI.Xaml.Controls.Input
                 this.SelectionService.SelectionChanged -= value;
             }
         }
+
+        /// <summary>
+        /// Occurs when the <see cref="DisplayMode"/> property is changed.
+        /// </summary>
+        public event EventHandler<EventArgs> DisplayModeChanged;
 
         /// <summary>
         /// Gets the <see cref="CommandService"/> instance that manages the commanding behavior of this instance.
@@ -2207,82 +2212,82 @@ namespace Telerik.UI.Xaml.Controls.Input
                 return;
             }
 
-            if (this.HeaderContent == null)
+            string headerContent = null;
+            switch (this.DisplayMode)
             {
-                string headerContent = null;
+                case CalendarDisplayMode.MonthView:
+                    headerContent = string.Format(this.currentCulture, this.MonthViewHeaderFormat, this.DisplayDate);
+                    break;
+                case CalendarDisplayMode.YearView:
+                    headerContent = string.Format(this.currentCulture, this.YearViewHeaderFormat, this.DisplayDate);
+                    break;
+                case CalendarDisplayMode.DecadeView:
+                    DateTime decadeStart = CalendarMathHelper.GetFirstDateOfDecade(this.DisplayDate);
+                    DateTime decadeEnd = decadeStart.AddYears(9);
 
-                switch (this.DisplayMode)
-                {
-                    case CalendarDisplayMode.MonthView:
-                        headerContent = string.Format(this.currentCulture, this.MonthViewHeaderFormat, this.DisplayDate);
-                        break;
-                    case CalendarDisplayMode.YearView:
-                        headerContent = string.Format(this.currentCulture, this.YearViewHeaderFormat, this.DisplayDate);
-                        break;
-                    case CalendarDisplayMode.DecadeView:
-                        DateTime decadeStart = CalendarMathHelper.GetFirstDateOfDecade(this.DisplayDate);
-                        DateTime decadeEnd = decadeStart.AddYears(9);
+                    headerContent = string.Format(this.currentCulture, this.DecadeViewHeaderFormat, decadeStart, decadeEnd);
+                    break;
+                case CalendarDisplayMode.CenturyView:
+                    DateTime centuryStart = CalendarMathHelper.GetFirstDateOfCentury(this.DisplayDate);
+                    DateTime centuryEnd = centuryStart.AddYears(99);
 
-                        headerContent = string.Format(this.currentCulture, this.DecadeViewHeaderFormat, decadeStart, decadeEnd);
-                        break;
-                    case CalendarDisplayMode.CenturyView:
-                        DateTime centuryStart = CalendarMathHelper.GetFirstDateOfCentury(this.DisplayDate);
-                        DateTime centuryEnd = centuryStart.AddYears(99);
-
-                        headerContent = string.Format(this.currentCulture, this.CenturyViewHeaderFormat, centuryStart, centuryEnd);
-                        break;
-                    case CalendarDisplayMode.MultiDayView:
-                        string headerText = this.MultiDayViewSettings.MultiDayViewHeaderText;
-                        if (string.IsNullOrEmpty(headerText))
+                    headerContent = string.Format(this.currentCulture, this.CenturyViewHeaderFormat, centuryStart, centuryEnd);
+                    break;
+                case CalendarDisplayMode.MultiDayView:
+                    string headerText = this.MultiDayViewSettings.MultiDayViewHeaderText;
+                    if (string.IsNullOrEmpty(headerText))
+                    {
+                        DateTime firstDateOfCurrentWeek = this.DisplayDate;
+                        DateTime lastDayOfWeek;
+                        int visibleDays = this.MultiDayViewSettings.VisibleDays;
+                        if (this.MultiDayViewSettings.WeekendsVisible)
                         {
-                            DateTime firstDateOfCurrentWeek = this.DisplayDate;
-                            DateTime lastDayOfWeek;
-                            int visibleDays = this.MultiDayViewSettings.VisibleDays;
-                            if (this.MultiDayViewSettings.WeekendsVisible)
-                            {
-                                lastDayOfWeek = firstDateOfCurrentWeek.AddDays(visibleDays);
-                            }
-                            else
-                            {
-                                firstDateOfCurrentWeek = CalendarMathHelper.SetFirstAvailableBusinessDay(firstDateOfCurrentWeek, 1);
-                                lastDayOfWeek = CalendarMathHelper.AddBusinessDays(firstDateOfCurrentWeek, visibleDays);
-                            }
-
-                            if (visibleDays == 1)
-                            {
-                                string format = "{0:d MMMM yyyy}";
-                                headerContent = string.Format(this.currentCulture, format, firstDateOfCurrentWeek);
-                            }
-                            else
-                            {
-                                string format = firstDateOfCurrentWeek.Year == lastDayOfWeek.Subtract(TimeSpan.FromTicks(1)).Year ?
-                                  (firstDateOfCurrentWeek.Month == lastDayOfWeek.Subtract(TimeSpan.FromTicks(1)).Month ?
-                                  "{0:d } ~ {1:d MMMM yyyy}" :
-                                  "{0:d MMMM} ~ {1:d MMMM yyyy}") :
-                                  "{0:d MMMM yyyy} ~ {1:d MMMM yyyy}";
-
-                                lastDayOfWeek = lastDayOfWeek.Subtract(TimeSpan.FromTicks(1));
-                                if (!this.MultiDayViewSettings.WeekendsVisible)
-                                {
-                                    lastDayOfWeek = CalendarMathHelper.SetFirstAvailableBusinessDay(lastDayOfWeek, -1);
-                                }
-
-                                headerContent = string.Format(this.currentCulture, format, firstDateOfCurrentWeek, lastDayOfWeek);
-                            }
+                            lastDayOfWeek = firstDateOfCurrentWeek.AddDays(visibleDays);
                         }
                         else
                         {
-                            headerContent = headerText;
+                            firstDateOfCurrentWeek = CalendarMathHelper.SetFirstAvailableBusinessDay(firstDateOfCurrentWeek, 1);
+                            lastDayOfWeek = CalendarMathHelper.AddBusinessDays(firstDateOfCurrentWeek, visibleDays);
                         }
 
-                        break;
-                }
+                        if (visibleDays == 1)
+                        {
+                            string format = "{0:d MMMM yyyy}";
+                            headerContent = string.Format(this.currentCulture, format, firstDateOfCurrentWeek);
+                        }
+                        else
+                        {
+                            string format = firstDateOfCurrentWeek.Year == lastDayOfWeek.Subtract(TimeSpan.FromTicks(1)).Year ?
+                              (firstDateOfCurrentWeek.Month == lastDayOfWeek.Subtract(TimeSpan.FromTicks(1)).Month ?
+                              "{0:d } ~ {1:d MMMM yyyy}" :
+                              "{0:d MMMM} ~ {1:d MMMM yyyy}") :
+                              "{0:d MMMM yyyy} ~ {1:d MMMM yyyy}";
 
+                            lastDayOfWeek = lastDayOfWeek.Subtract(TimeSpan.FromTicks(1));
+                            if (!this.MultiDayViewSettings.WeekendsVisible)
+                            {
+                                lastDayOfWeek = CalendarMathHelper.SetFirstAvailableBusinessDay(lastDayOfWeek, -1);
+                            }
+
+                            headerContent = string.Format(this.currentCulture, format, firstDateOfCurrentWeek, lastDayOfWeek);
+                        }
+                    }
+                    else
+                    {
+                        headerContent = headerText;
+                    }
+
+                    break;
+            }
+
+            if (this.HeaderContent == null)
+            {
                 this.navigationPanel.HeaderContent = headerContent;
             }
             else
             {
                 this.navigationPanel.HeaderContent = this.HeaderContent;
+                this.navigationPanel.DataContext = headerContent;
             }
 
             this.navigationPanel.HeaderContentTemplate = this.HeaderContentTemplate;
@@ -2681,6 +2686,8 @@ namespace Telerik.UI.Xaml.Controls.Input
                 calendar.FetchNewAppointments();
                 calendar.model.multiDayViewModel.updateFlag = MultiDayViewUpdateFlag.All;
             }
+
+            calendar.DisplayModeChanged?.Invoke(calendar, new EventArgs());
         }
 
         private static void OnCalendarViewHeaderFormatPropertyChanged(DependencyObject sender, DependencyPropertyChangedEventArgs args)
@@ -3315,8 +3322,13 @@ namespace Telerik.UI.Xaml.Controls.Input
 
             if (this.pendingScrollTimeRuler != null)
             {
-                await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () => this.pendingScrollTimeRuler.Invoke());
-                this.pendingScrollTimeRuler = null;
+                await this.Dispatcher.RunAsync(
+                    Windows.UI.Core.CoreDispatcherPriority.Normal, 
+                    () =>
+                {
+                    this.pendingScrollTimeRuler?.Invoke();
+                    this.pendingScrollTimeRuler = null;
+                });
             }
         }
 
