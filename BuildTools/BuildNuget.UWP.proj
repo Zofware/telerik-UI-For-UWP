@@ -15,7 +15,7 @@
     <Target Name="PrepareNugetProperties">
 
         <PropertyGroup>
-            <Version Condition= " '$(Version)' == '' ">1.0.2.9-z1</Version>
+            <Version Condition= " '$(Version)' == '' ">1.0.2.9-z2</Version>
             <FullPathDeployDirectory>$([System.IO.Path]::GetFullPath('$(DeployDirectory)'))</FullPathDeployDirectory>
             <BinariesSubDir>$(BinariesTargetDirectory)</BinariesSubDir>
 
