@@ -22,7 +22,7 @@ namespace Telerik.UI.Xaml.Controls.Input
         /// <summary>
         /// Identifies the <see cref="CornerRadius"/> dependency property.
         /// </summary>
-        public static readonly DependencyProperty CornerRadiusProperty =
+        public static readonly new DependencyProperty CornerRadiusProperty =
             DependencyProperty.Register(nameof(CornerRadius), typeof(CornerRadius), typeof(RadSegmentedControl), new PropertyMetadata(new CornerRadius(0d)));
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Telerik.UI.Xaml.Controls.Input
         /// <summary>
         /// Gets or sets the corner radius of the control outer border.
         /// </summary>
-        public CornerRadius CornerRadius
+        public new CornerRadius CornerRadius
         {
             get { return (CornerRadius)GetValue(CornerRadiusProperty); }
             set { this.SetValue(CornerRadiusProperty, value); }

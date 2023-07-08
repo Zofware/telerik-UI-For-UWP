@@ -128,6 +128,12 @@ namespace Telerik.UI.Xaml.Controls.Input.Calendar
         }
 
         /// <inheritdoc/>
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        /// <inheritdoc/>
         public virtual Slot Copy()
         {
             var slot = new Slot();

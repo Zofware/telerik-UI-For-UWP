@@ -61,7 +61,7 @@ namespace Telerik.UI.Xaml.Controls
         /// <summary>
         /// Gets a value indicating whether the <see cref="E:Loaded"/> event is handled and the <see cref="LoadCore"/> routine is passed.
         /// </summary>
-        protected internal bool IsLoaded
+        protected internal new bool IsLoaded
         {
             get
             {

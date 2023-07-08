@@ -48,7 +48,7 @@ namespace Telerik.UI.Xaml.Controls
         /// <summary>
         /// Gets a value indicating whether the control is currently loaded.
         /// </summary>
-        public bool IsLoaded
+        public new bool IsLoaded
         {
             get
             {

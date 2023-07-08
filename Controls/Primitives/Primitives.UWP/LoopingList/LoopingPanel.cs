@@ -172,7 +172,7 @@ namespace Telerik.UI.Xaml.Controls.Primitives.LoopingList
         /// <summary>
         /// Gets a value indicating whether the panel is Loaded (present on the visual scene).
         /// </summary>
-        internal bool IsLoaded
+        internal new bool IsLoaded
         {
             get
             {
