@@ -71,7 +71,14 @@ namespace Telerik.UI.Xaml.Controls.Grid
             switch (this.Owner.SelectionUnit)
             {
                 case DataGridSelectionUnit.Row:
-                    this.SelectItem(((GridRowModel)gridCellModel.Parent).ItemInfo.Item, true, uiSelect);
+                    // defensive programming
+                    {
+                        var item = ((GridRowModel)gridCellModel?.Parent)?.ItemInfo.Item;
+                        if (item != null)
+                        {
+                            this.SelectItem(item, true, uiSelect);
+                        }
+                    }
                     break;
                 case DataGridSelectionUnit.Cell:
                     var cellInfo = new DataGridCellInfo(gridCellModel.ParentRow.ItemInfo, gridCellModel.Column);
