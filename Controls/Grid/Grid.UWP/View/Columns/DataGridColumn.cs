@@ -390,11 +390,17 @@ namespace Telerik.UI.Xaml.Controls.Grid
             set;
         }
         
-        internal bool IsFiltered
+        public bool IsFiltered
         {
             get
             {
                 return this.isFiltered;
+            }
+
+            set
+            {
+                this.isFiltered = value;
+                this.UpdateFilterVisualState(value);
             }
         }
 
