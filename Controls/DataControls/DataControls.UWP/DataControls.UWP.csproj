@@ -12,8 +12,10 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <!-- The Xaml editor doesn't work on Win10 when the app is compiled for Win11. Compile locally for Win10 as a workaround. Compile for Win11 for DevOps builds. -->
-    <TargetPlatformVersion Condition=" ('$(TargetPlatformVersion)' == '') And ('$(AzureDevOpsBuild)' != 'true') ">10.0.19041.0</TargetPlatformVersion>
-    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.22621.0</TargetPlatformVersion>
+    <OsVersion>$(registry:HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion@CurrentVersion).$(registry:HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion@CurrentBuildNumber)</OsVersion>
+    <TargetPlatformVersion Condition=" ('$(TargetPlatformVersion)' == '') And ('$(OsVersion)' &lt; '6.3.22621') And ('$(AzureDevOpsBuild)' != 'true') ">10.0.19041.0</TargetPlatformVersion>
+    <TargetPlatformVersion Condition=" ('$(TargetPlatformVersion)' == '') And ('$(OsVersion)' &lt; '6.3.26100') And ('$(AzureDevOpsBuild)' != 'true') ">10.0.22621.0</TargetPlatformVersion>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.26100.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.18362.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
