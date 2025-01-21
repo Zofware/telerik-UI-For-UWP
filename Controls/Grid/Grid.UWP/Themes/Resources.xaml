@@ -168,7 +168,7 @@
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Margin="0,0,5,0" FontFamily="Segoe MDL2 Assets" VerticalAlignment="Center" x:Name="Icon" Text="{Binding IconText, RelativeSource={RelativeSource Mode=TemplatedParent}}" Foreground="{TemplateBinding Foreground}" />
+                                <TextBlock Margin="0,0,5,0" FontFamily="{ThemeResource SymbolThemeFontFamily}" VerticalAlignment="Center" x:Name="Icon" Text="{Binding IconText, RelativeSource={RelativeSource Mode=TemplatedParent}}" Foreground="{TemplateBinding Foreground}" />
                                 <ContentPresenter Grid.Column="1" x:Name="ContentPresenter" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" AutomationProperties.AccessibilityView="Raw" ContentTemplate="{TemplateBinding ContentTemplate}" ContentTransitions="{TemplateBinding ContentTransitions}" Content="{TemplateBinding Content}" />
                             </Grid>
                         </Border>
@@ -997,7 +997,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Thumb">
                     <Border Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
-                        <TextBlock FontSize="{TemplateBinding FontSize}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="&#xE784;" IsHitTestVisible="False" FontFamily="Segoe MDL2 Assets"/>
+                        <TextBlock FontSize="{TemplateBinding FontSize}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="&#xE784;" IsHitTestVisible="False" FontFamily="{ThemeResource SymbolThemeFontFamily}"/>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
