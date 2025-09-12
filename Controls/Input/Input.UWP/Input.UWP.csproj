@@ -26,7 +26,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Core.UWP.NET9\Core.UWP.NET9.csproj" />
-    <ProjectReference Include="..\..\Primitives\Primives.UWP.NET9\Primitives.UWP.NET9.csproj" />
+    <ProjectReference Include="..\..\Core.UWP\Core.UWP.csproj" />
+    <ProjectReference Include="..\..\Primitives\Primives.UWP\Primitives.UWP.csproj" />
   </ItemGroup>
 </Project>

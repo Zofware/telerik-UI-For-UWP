@@ -122,10 +122,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Core.UWP.NET9\Core.UWP.NET9.csproj" />
-    <ProjectReference Include="..\..\Data.UWP.NET9\Data.UWP.NET9.csproj" />
-    <ProjectReference Include="..\..\DataControls\DataControls.UWP.NET9\DataControls.UWP.NET9.csproj" />
-    <ProjectReference Include="..\..\Input\Input.UWP.NET9\Input.UWP.NET9.csproj" />
-    <ProjectReference Include="..\..\Primitives\Primives.UWP.NET9\Primitives.UWP.NET9.csproj" />
+    <ProjectReference Include="..\..\Core.UWP\Core.UWP.csproj" />
+    <ProjectReference Include="..\..\Data.UWP\Data.UWP.csproj" />
+    <ProjectReference Include="..\..\DataControls\DataControls.UWP\DataControls.UWP.csproj" />
+    <ProjectReference Include="..\..\Input\Input.UWP\Input.UWP.csproj" />
+    <ProjectReference Include="..\..\Primitives\Primives.UWP\Primitives.UWP.csproj" />
   </ItemGroup>
 </Project>

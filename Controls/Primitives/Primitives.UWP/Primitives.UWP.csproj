@@ -42,6 +42,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Core.UWP.NET9\Core.UWP.NET9.csproj" />
+    <ProjectReference Include="..\..\Core.UWP\Core.UWP.csproj" />
   </ItemGroup>
 </Project>
