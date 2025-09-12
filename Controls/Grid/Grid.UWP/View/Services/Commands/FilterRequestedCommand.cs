@@ -32,7 +32,7 @@ namespace Telerik.UI.Xaml.Controls.Grid.Commands
                 if (context.Descriptor != null)
                 {
                     this.Owner.FilterDescriptors.Add(context.Descriptor);
-                    if (context.Descriptor.DescriptorPeer != context.Column)
+                    if (!ReferenceEquals(context.Descriptor.DescriptorPeer, context.Column))
                     {
                         context.Descriptor.UpdateAssociatedPeer(context.Column);
                     }

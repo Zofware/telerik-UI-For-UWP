@@ -299,10 +299,10 @@ namespace Telerik.UI.Xaml.Controls.Grid
 
             private void Initialize()
             {
-                var root = this.owner.model.CurrentDataProvider.Results.Root;
-                if (root != null && root.RowGroup != null)
+                var root = this.owner?.model?.CurrentDataProvider?.Results.Root;
+                if (root?.RowGroup != null)
                 {
-                    this.AddGroupEnumerator(root.RowGroup);
+                    this.AddGroupEnumerator(root.Value.RowGroup);
                 }
                 else
                 {

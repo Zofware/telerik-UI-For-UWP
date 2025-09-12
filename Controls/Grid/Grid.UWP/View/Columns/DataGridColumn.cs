@@ -571,7 +571,7 @@ namespace Telerik.UI.Xaml.Controls.Grid
         internal bool ShouldRefreshCell(GridCellModel model)
         {
             var currentUpdate = this.Model.GridView.UpdateService.CurrentExecutingUpdate;
-            bool contentUpdated = currentUpdate != null && currentUpdate.Sender == this && currentUpdate.Flags.HasFlag(UpdateFlags.AffectsContent);
+            bool contentUpdated = currentUpdate != null && ReferenceEquals(currentUpdate.Sender, this) && currentUpdate.Flags.HasFlag(UpdateFlags.AffectsContent);
 
             return contentUpdated || model is GridCellEditorModel;
         }
@@ -614,7 +614,7 @@ namespace Telerik.UI.Xaml.Controls.Grid
 
             if (descriptor is FilterDescriptorBase)
             {
-                this.isFiltered = this.Model.FilterDescriptors.FirstOrDefault(d => d.DescriptorPeer == this) != descriptor;
+                this.isFiltered = this.Model.FilterDescriptors.FirstOrDefault(d => ReferenceEquals(d.DescriptorPeer, this)) != descriptor;
 
                 this.UpdateFilterVisualState(this.isFiltered);
             }

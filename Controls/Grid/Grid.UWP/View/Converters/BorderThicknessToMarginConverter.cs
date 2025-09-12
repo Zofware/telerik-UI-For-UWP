@@ -19,9 +19,9 @@ namespace Telerik.UI.Xaml.Controls.Grid.View
         /// <returns>The formatted string.</returns>
         public object Convert(object value, Type targetType, object parameter, string language)
         {
-            var margin = (Thickness)value;
-            if (margin != null)
+            if (value != null)
             {
+                var margin = (Thickness)value;
                 return new Thickness(0, 0, -margin.Right, 0);
             }
 

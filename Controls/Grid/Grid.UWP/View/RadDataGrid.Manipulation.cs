@@ -80,7 +80,7 @@ namespace Telerik.UI.Xaml.Controls.Grid
             {
                 FirstFilterControl = header.Column.CreateFilterControl(),
                 Column = header.Column,
-                AssociatedDescriptor = this.FilterDescriptors.FirstOrDefault(d => d.DescriptorPeer == header.Column)
+                AssociatedDescriptor = this.FilterDescriptors.FirstOrDefault(d => ReferenceEquals(d.DescriptorPeer, header.Column))
             };
 
             if (header.Column.SupportsCompositeFilter)

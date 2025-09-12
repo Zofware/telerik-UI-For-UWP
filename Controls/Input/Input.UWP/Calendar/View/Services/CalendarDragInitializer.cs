@@ -25,11 +25,11 @@ namespace Telerik.UI.Xaml.Controls.Input.Calendar
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0")]
         protected override void OnPressed(PointerRoutedEventArgs e)
         {
-            var hitPoint = e.GetCurrentPoint(this.owner.Owner.contentLayer.VisualElement).Position;
+            var hitPoint = e.GetCurrentPoint(this.owner.Owner.contentLayer.VisualElement)?.Position;
 
-            if (hitPoint != null)
+            if (hitPoint.HasValue)
             {
-                this.lastPressedPoint = hitPoint;
+                this.lastPressedPoint = hitPoint.Value;
             }
         }
     }

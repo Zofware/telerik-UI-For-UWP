@@ -1086,7 +1086,7 @@ namespace Telerik.UI.Xaml.Controls.Input.Calendar
 
         private void OnScrollViewerPointerPressed(object sender, PointerRoutedEventArgs e)
         {
-            if (e.OriginalSource != this.topLeftHeaderPanel && e.OriginalSource != this.leftHeaderPanel && !this.isAnimationOngoing)
+            if (!ReferenceEquals(e.OriginalSource, this.topLeftHeaderPanel) && !ReferenceEquals(e.OriginalSource, this.leftHeaderPanel) && !this.isAnimationOngoing)
             {
                 this.scrollMousePosition = e.GetCurrentPoint(this.scrollViewer).Position;
                 this.prevHorizontalOffset = this.translateTransform.X;

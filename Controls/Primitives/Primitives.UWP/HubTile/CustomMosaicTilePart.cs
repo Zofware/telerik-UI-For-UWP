@@ -81,7 +81,7 @@ namespace Telerik.UI.Xaml.Controls.Primitives.HubTile
         {
             if (this.IsInFrontState)
             {
-                if (newSource == this.BackContent)
+                if (ReferenceEquals(newSource, this.BackContent))
                 {
                     this.Flip();
                 }
@@ -92,7 +92,7 @@ namespace Telerik.UI.Xaml.Controls.Primitives.HubTile
             }
             else
             {
-                if (newSource == this.FrontContent)
+                if (ReferenceEquals(newSource, this.FrontContent))
                 {
                     this.Flip();
                 }

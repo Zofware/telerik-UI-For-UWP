@@ -412,7 +412,7 @@ namespace Telerik.UI.Xaml.Controls.Data.ListView
                 && RadListViewItem.CanCapturePointer(this, pointer))
             {
                 var source = e.OriginalSource;
-                if (source != this.firstHandle && source != this.secondHandle)
+                if (!ReferenceEquals(source, this.firstHandle) && !ReferenceEquals(source, this.secondHandle))
                 {
                     this.listView.OnItemReorderHandlePressed(this, e, DragDropTrigger.MouseDrag, null);
                 }
@@ -517,7 +517,7 @@ namespace Telerik.UI.Xaml.Controls.Data.ListView
         {
             base.OnKeyDown(e);
 
-            if (e.OriginalSource != this)
+            if (!ReferenceEquals(e.OriginalSource, this))
             {
                 return;
             }

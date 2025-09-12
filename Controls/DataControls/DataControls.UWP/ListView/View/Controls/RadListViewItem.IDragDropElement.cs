@@ -37,7 +37,7 @@ namespace Telerik.UI.Xaml.Controls.Data.ListView
             }
             else
             {
-                if (this.isHandleEnabled && initializeContext == this.reorderHandle)
+                if (this.isHandleEnabled && ReferenceEquals(initializeContext, this.reorderHandle))
                 {
                     return this.ListView.IsItemReorderEnabled && this.IsHandleEnabled;
                 }
@@ -58,7 +58,7 @@ namespace Telerik.UI.Xaml.Controls.Data.ListView
                 bool isExecuted = false;
                 DragAction? dragAction = null;
 
-                if (trigger == DragDropTrigger.Drag && (!this.isHandleEnabled || initializeContext != this.reorderHandle))
+                if (trigger == DragDropTrigger.Drag && (!this.isHandleEnabled || !ReferenceEquals(initializeContext, this.reorderHandle)))
                 {
                     if (this.ListView.LayoutDefinition is StackLayoutDefinition)
                     {
@@ -155,7 +155,7 @@ namespace Telerik.UI.Xaml.Controls.Data.ListView
 
                 if (this.ShouldReorder(position, data))
                 {
-                    if (this.ListView.swipedItem == data.Item)
+                    if (ReferenceEquals(this.ListView.swipedItem, data.Item))
                     {
                         this.ClearActionContent();
                     }

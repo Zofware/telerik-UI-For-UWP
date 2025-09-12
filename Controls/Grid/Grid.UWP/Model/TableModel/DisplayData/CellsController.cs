@@ -379,7 +379,7 @@ namespace Telerik.UI.Xaml.Controls.Grid
                 cellDecorator.parent = parentRow as Element;
             }
 
-            if (!object.Equals(cellDecorator.Value, cellValue) || cellDecorator.Column != columnItemInfo.Item || cellDecorator.Column.ShouldRefreshCell(cellDecorator))
+            if (!object.Equals(cellDecorator.Value, cellValue) || !ReferenceEquals(cellDecorator.Column, columnItemInfo.Item) || cellDecorator.Column.ShouldRefreshCell(cellDecorator))
             {
                 cellDecorator.Value = cellValue;
                 cellDecorator.Column = columnItemInfo.Item as DataGridColumn;

@@ -177,7 +177,7 @@ namespace Telerik.UI.Xaml.Controls.Grid
         {
             foreach (DataDescriptor descriptor in this.owner.ForEachDataDescriptor())
             {
-                if (descriptor.DescriptorPeer == column)
+                if (ReferenceEquals(descriptor.DescriptorPeer, column))
                 {
                     descriptor.DescriptorPeer = null;
                 }

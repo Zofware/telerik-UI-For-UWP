@@ -88,7 +88,7 @@ namespace Telerik.UI.Xaml.Controls.Grid.Model
 
             foreach (var selectedItem in this.GridView.SelectionService.selectedCellsSet)
             {
-                var visibleByColumn = realizedColumns.Where(c => c.Item == selectedItem.Column);
+                var visibleByColumn = realizedColumns.Where(c => ReferenceEquals(c.Item, selectedItem.Column));
 
                 foreach (var item in visibleByColumn)
                 {

@@ -52,7 +52,7 @@ namespace Telerik.UI.Xaml.Controls.Data.ListView.Primitives
                 return;
             }
 
-            if (this.Owner.swipedItem == data.Item)
+            if (ReferenceEquals(this.Owner.swipedItem, data.Item))
             {
                 this.Owner.ResetActionContent();
             }

@@ -143,16 +143,16 @@ namespace Telerik.UI.Xaml.Controls.Input.Calendar
 
         private void OnContentPanelPointerPressed(object sender, PointerRoutedEventArgs e)
         {
-            var hitPoint = e.GetCurrentPoint(this.Owner.contentLayer.VisualElement).Position;
+            var hitPoint = e.GetCurrentPoint(this.Owner.contentLayer.VisualElement)?.Position;
 
             if (e.Pointer.PointerDeviceType == PointerDeviceType.Mouse)
             {
                 this.canSwipe = false;
             }
 
-            if (hitPoint != null)
+            if (hitPoint.HasValue)
             {
-                this.lastPressedPoint = hitPoint;
+                this.lastPressedPoint = hitPoint.Value;
                 this.OnDragStarted(this.lastPressedPoint, e);
             }
         }

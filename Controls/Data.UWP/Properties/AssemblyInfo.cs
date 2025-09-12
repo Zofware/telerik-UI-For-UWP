@@ -4,12 +4,12 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Telerik.Core;
 
-[assembly: AssemblyTitle("Telerik.Data for " + CommonStrings.FrameworkTitleString + CommonStrings.TrialVersionTitleString)]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyProduct("Data")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
+//[assembly: AssemblyTitle("Telerik.Data for " + CommonStrings.FrameworkTitleString + CommonStrings.TrialVersionTitleString)]
+//[assembly: AssemblyDescription("")]
+//[assembly: AssemblyConfiguration("")]
+//[assembly: AssemblyProduct("Data")]
+//[assembly: AssemblyTrademark("")]
+//[assembly: AssemblyCulture("")]
 [assembly: NeutralResourcesLanguage("en")]
 [assembly: ComVisible(false)]
 

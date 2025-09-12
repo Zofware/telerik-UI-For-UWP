@@ -26,7 +26,7 @@ namespace Telerik.Data.Core
             }
         }
 
-        internal abstract DescriptionBase EngineDescription
+        internal DescriptionBase EngineDescription
         {
             get;
         }
