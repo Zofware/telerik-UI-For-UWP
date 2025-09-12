@@ -34,6 +34,6 @@
     <ProjectReference Include="..\..\Core.UWP\Core.UWP.csproj" />
     <ProjectReference Include="..\..\Data.UWP\Data.UWP.csproj" />
     <ProjectReference Include="..\..\Input\Input.UWP\Input.UWP.csproj" />
-    <ProjectReference Include="..\..\Primitives\Primives.UWP\Primitives.UWP.csproj" />
+    <ProjectReference Include="..\..\Primitives\Primitives.UWP\Primitives.UWP.csproj" />
   </ItemGroup>
 </Project>
