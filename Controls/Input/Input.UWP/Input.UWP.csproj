@@ -20,6 +20,17 @@
     <DefineConstants>$(DefineConstants);TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ToolboxIcons\Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox.Icon.png" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ToolboxIcons\Telerik.UI.Xaml.Controls.Input.RadCalendar.Icon.png" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ToolboxIcons\Telerik.UI.Xaml.Controls.Input.RadDatePicker.Icon.png" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ToolboxIcons\Telerik.UI.Xaml.Controls.Input.RadRating.Icon.png" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ToolboxIcons\Telerik.UI.Xaml.Controls.Input.RadTimePicker.Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ToolboxIcons\Telerik.UI.Xaml.Controls.Input.RadNumericBox.Icon.png" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ToolboxIcons\Telerik.UI.Xaml.Controls.Input.RadRangeSlider.Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

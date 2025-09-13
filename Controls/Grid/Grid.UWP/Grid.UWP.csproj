@@ -116,6 +116,86 @@
     <None Remove="CustomDictionary.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\FilterFlyout\ic_arrow_down.png" />
+    <Content Include="Assets\FilterFlyout\ic_arrow_down.scale-140.png" />
+    <Content Include="Assets\FilterFlyout\ic_arrow_down.scale-180.png" />
+    <Content Include="Assets\FilterFlyout\ic_arrow_down.scale-240.png" />
+    <Content Include="Assets\FilterFlyout\ic_arrow_down_white.png" />
+    <Content Include="Assets\FilterFlyout\ic_arrow_down_white.scale-140.png" />
+    <Content Include="Assets\FilterFlyout\ic_arrow_down_white.scale-180.png" />
+    <Content Include="Assets\FilterFlyout\ic_arrow_down_white.scale-240.png" />
+    <Content Include="Assets\Reorder\close_btn.png" />
+    <Content Include="Assets\Reorder\close_btn.scale-140.png" />
+    <Content Include="Assets\Reorder\close_btn.scale-180.png" />
+    <Content Include="Assets\Reorder\close_btn.scale-240.png" />
+    <Content Include="Assets\Reorder\close_btn_blue.png" />
+    <Content Include="Assets\Reorder\close_btn_blue.scale-140.png" />
+    <Content Include="Assets\Reorder\close_btn_blue.scale-180.png" />
+    <Content Include="Assets\Reorder\close_btn_blue.scale-240.png" />
+    <Content Include="Assets\Reorder\column_chooser_btn.png" />
+    <Content Include="Assets\Reorder\column_chooser_btn.scale-140.png" />
+    <Content Include="Assets\Reorder\column_chooser_btn.scale-180.png" />
+    <Content Include="Assets\Reorder\column_chooser_btn.scale-240.png" />
+    <Content Include="Assets\Reorder\column_chooser_btn_blue.png" />
+    <Content Include="Assets\Reorder\column_chooser_btn_blue.scale-140.png" />
+    <Content Include="Assets\Reorder\column_chooser_btn_blue.scale-180.png" />
+    <Content Include="Assets\Reorder\column_chooser_btn_blue.scale-240.png" />
+    <Content Include="Assets\Reorder\ic_reorder_dark.png" />
+    <Content Include="Assets\Reorder\ic_reorder_dark.scale-140.png" />
+    <Content Include="Assets\Reorder\ic_reorder_dark.scale-180.png" />
+    <Content Include="Assets\Reorder\ic_reorder_dark.scale-240.png" />
+    <Content Include="Assets\Reorder\ic_reorder_light.png" />
+    <Content Include="Assets\Reorder\ic_reorder_light.scale-140.png" />
+    <Content Include="Assets\Reorder\ic_reorder_light.scale-180.png" />
+    <Content Include="Assets\Reorder\ic_reorder_light.scale-240.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Remove="View\Columns\Resources\DefaultBooleanColumnEditorStyle.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="View\Columns\Resources\DefaultBooleanColumnEditorStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Columns\Resources\DefaultBooleanColumnStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Columns\Resources\DefaultComboBoxColumnEditorStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Columns\Resources\DefaultDateColumnEditorStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Columns\Resources\DefaultNumericalColumnEditorStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Columns\Resources\DefaultTextColumnEditorStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Columns\Resources\DefaultTextColumnStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Columns\Resources\DefaultTimeColumnEditorStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="View\Columns\Resources\DefaultTextColumnFlyoutContentStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ToolboxIcons\Telerik.UI.Xaml.Controls.Grid.RadDataGrid.Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

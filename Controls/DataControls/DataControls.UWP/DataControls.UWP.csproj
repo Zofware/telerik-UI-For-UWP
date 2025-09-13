@@ -25,6 +25,22 @@
     <Compile Remove="ListView\Layout\Strategies\HeaderStrategy.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ToolboxIcons\Telerik.UI.Xaml.Controls.Data.RadDataBoundListBox.Icon.png" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ToolboxIcons\Telerik.UI.Xaml.Controls.Data.RadDataForm.Icon.png" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ToolboxIcons\Telerik.UI.Xaml.Controls.Data.RadListView.Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ToolboxIcons\Telerik.UI.Xaml.Controls.Data.RadHexView.Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)ListView\Resources\reorder-handle-dark.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)ListView\Resources\reorder-handle-light.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

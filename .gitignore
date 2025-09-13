@@ -27,9 +27,6 @@ BuildTools/nuget.exe
 Nuget/*
 
 Controls/.nuget/*
-Controls/
-Controls/Core/*
-Controls/Data/*
 Controls/**/*.Windows/*
 Controls/**/*.WindowsPhone/*
 Controls/DataStorage/*
