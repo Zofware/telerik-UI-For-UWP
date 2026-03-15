@@ -14,6 +14,7 @@ obj
 *.Cache
 *.lock
 *.ide*
+**/.vs/
 
 project.lock.json
 
@@ -27,7 +28,6 @@ BuildTools/nuget.exe
 Nuget/*
 
 Controls/.nuget/*
-Controls/
 Controls/Core/*
 Controls/Data/*
 Controls/**/*.Windows/*
