@@ -313,24 +313,27 @@ namespace Telerik.Data.Core
             switch (e.Action)
             {
                 case NotifyCollectionChangedAction.Add:
-
                     for (int i = 0; i < e.NewItems.Count; i++)
                     {
                         this.InsertItem(e.NewStartingIndex + i, e.NewItems[i]);
                     }
-
                     break;
                 case NotifyCollectionChangedAction.Remove:
                     for (int i = 0; i < e.OldItems.Count; i++)
                     {
                         this.RemoveItem(e.OldStartingIndex, e.OldItems[i]);
                     }
-
                     break;
                 case NotifyCollectionChangedAction.Move:
                 case NotifyCollectionChangedAction.Replace:
-                    this.RemoveItem(e.OldStartingIndex, this.internalList[e.OldStartingIndex]);
-                    this.InsertItem(e.NewStartingIndex, e.NewItems[0]);
+                    for (int i = 0; i < e.OldItems.Count; i++)
+                    {
+                        this.RemoveItem(e.OldStartingIndex, e.OldItems[i]);
+                    }
+                    for (int i = 0; i < e.NewItems.Count; i++)
+                    {
+                        this.InsertItem(e.NewStartingIndex, e.NewItems[i]);
+                    }
                     break;
                 case NotifyCollectionChangedAction.Reset:
                     this.ClearItemsHandlers();

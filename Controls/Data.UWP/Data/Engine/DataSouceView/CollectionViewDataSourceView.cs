@@ -406,13 +406,10 @@ namespace Telerik.Data.Core
             switch (e.Action)
             {
                 case NotifyCollectionChangedAction.Add:
-
                     this.InsertItem(e.NewStartingIndex, (sender as ICollectionView)[e.NewStartingIndex]);
-
                     break;
                 case NotifyCollectionChangedAction.Remove:
                     this.RemoveItem(e.OldStartingIndex);
-
                     break;
                 case NotifyCollectionChangedAction.Replace:
                     this.ChangeItem(e.OldStartingIndex, (sender as ICollectionView)[e.OldStartingIndex]);
